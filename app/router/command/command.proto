@@ -22,6 +22,7 @@ message RoutingContext {
   string TargetDomain = 7;
   string Protocol = 8;
   string User = 9;
+  uint32 Level = 13;
   map<string, string> Attributes = 10;
   repeated string OutboundGroupTags = 11;
   string OutboundTag = 12;

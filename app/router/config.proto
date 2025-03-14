@@ -59,6 +59,7 @@ message RoutingRule {
   v2ray.core.common.net.PortList source_port_list = 16;
 
   repeated string user_email = 7;
+  repeated uint32 user_level = 18;
   repeated string inbound_tag = 8;
   repeated string protocol = 9;
 
@@ -169,6 +170,7 @@ message SimplifiedRoutingRule {
   string source_port_list = 16;
 
   repeated string user_email = 7;
+  repeated uint32 user_level = 18;
   repeated string inbound_tag = 8;
   repeated string protocol = 9;
 

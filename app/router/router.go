@@ -243,6 +243,7 @@ func init() {
 			rule.Protocol = v.Protocol
 			rule.Attributes = v.Attributes
 			rule.UserEmail = v.UserEmail
+			rule.UserLevel = v.UserLevel
 			rule.InboundTag = v.InboundTag
 			rule.DomainMatcher = v.DomainMatcher
 			switch s := v.TargetTag.(type) {

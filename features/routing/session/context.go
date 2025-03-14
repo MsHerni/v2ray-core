@@ -101,6 +101,14 @@ func (ctx *Context) GetUser() string {
 	return ctx.Inbound.User.Email
 }
 
+// GetLevel implements routing.Context.
+func (ctx *Context) GetLevel() uint32 {
+	if ctx.Inbound == nil || ctx.Inbound.User == nil {
+		return 0
+	}
+	return ctx.Inbound.User.Level
+}
+
 // GetAttributes implements routing.Context.
 func (ctx *Context) GetAttributes() map[string]string {
 	if ctx.Content == nil {

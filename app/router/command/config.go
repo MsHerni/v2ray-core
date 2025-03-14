@@ -55,6 +55,7 @@ var fieldMap = map[string]func(*RoutingContext, routing.Route){
 	"domain":         func(s *RoutingContext, r routing.Route) { s.TargetDomain = r.GetTargetDomain() },
 	"protocol":       func(s *RoutingContext, r routing.Route) { s.Protocol = r.GetProtocol() },
 	"user":           func(s *RoutingContext, r routing.Route) { s.User = r.GetUser() },
+	"level":          func(s *RoutingContext, r routing.Route) { s.Level = r.GetLevel() },
 	"attributes":     func(s *RoutingContext, r routing.Route) { s.Attributes = r.GetAttributes() },
 	"outbound_group": func(s *RoutingContext, r routing.Route) { s.OutboundGroupTags = r.GetOutboundGroupTags() },
 	"outbound":       func(s *RoutingContext, r routing.Route) { s.OutboundTag = r.GetOutboundTag() },

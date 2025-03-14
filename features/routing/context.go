@@ -35,6 +35,9 @@ type Context interface {
 	// GetUser returns the user email from the connection content, if exists.
 	GetUser() string
 
+	// GetLevel returns the user level from the connection content, if exists.
+	GetLevel() uint32
+
 	// GetAttributes returns extra attributes from the connection content.
 	GetAttributes() map[string]string
 

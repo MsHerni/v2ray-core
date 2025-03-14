@@ -212,6 +212,32 @@ func (v *UserMatcher) Apply(ctx routing.Context) bool {
 	return false
 }
 
+type LevelMatcher struct {
+	level []uint32
+}
+
+func NewLevelMatcher(levels []uint32) *LevelMatcher {
+	levelsCopy := make([]uint32, 0, len(levels))
+	for _, level := range levels {
+		levelsCopy = append(levelsCopy, level)
+	}
+	return &LevelMatcher{
+		level: levelsCopy,
+	}
+}
+
+// Apply implements Condition.
+func (v *LevelMatcher) Apply(ctx routing.Context) bool {
+	level := ctx.GetLevel()
+
+	for _, l := range v.level {
+		if l == level {
+			return true
+		}
+	}
+	return false
+}
+
 type InboundTagMatcher struct {
 	tags []string
 }

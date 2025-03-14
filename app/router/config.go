@@ -62,6 +62,10 @@ func (rr *RoutingRule) BuildCondition() (Condition, error) {
 		conds.Add(NewUserMatcher(rr.UserEmail))
 	}
 
+	if len(rr.UserLevel) > 0 {
+		conds.Add(NewLevelMatcher(rr.UserLevel))
+	}
+
 	if len(rr.InboundTag) > 0 {
 		conds.Add(NewInboundTagMatcher(rr.InboundTag))
 	}

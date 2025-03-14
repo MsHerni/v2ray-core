@@ -212,6 +212,7 @@ func parseFieldRule(ctx context.Context, msg json.RawMessage) (*router.RoutingRu
 		SourceIP   *cfgcommon.StringList  `json:"source"`
 		SourcePort *cfgcommon.PortList    `json:"sourcePort"`
 		User       *cfgcommon.StringList  `json:"user"`
+		Level      *cfgcommon.Uint32List  `json:"level"`
 		InboundTag *cfgcommon.StringList  `json:"inboundTag"`
 		Protocols  *cfgcommon.StringList  `json:"protocol"`
 		Attributes string                 `json:"attrs"`
@@ -291,6 +292,12 @@ func parseFieldRule(ctx context.Context, msg json.RawMessage) (*router.RoutingRu
 	if rawFieldRule.User != nil {
 		for _, s := range *rawFieldRule.User {
 			rule.UserEmail = append(rule.UserEmail, s)
+		}
+	}
+
+	if rawFieldRule.Level != nil {
+		for _, s := range *rawFieldRule.Level {
+			rule.UserLevel = append(rule.UserLevel, s)
 		}
 	}
 

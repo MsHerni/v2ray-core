@@ -12,6 +12,7 @@ import (
 //go:generate go run github.com/v2fly/v2ray-core/v5/common/errors/errorgen
 
 type StringList []string
+type Uint32List []uint32
 
 func NewStringList(raw []string) *StringList {
 	list := StringList(raw)
